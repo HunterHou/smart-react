@@ -9,7 +9,7 @@ class RemarkList extends Component {
         this.state = {
             remarks: [],
             inputValue: '',
-            sysTime:new Date().toLocaleTimeString()
+            systemTime: '3333'
         };
         this.inputChange = this.inputChange.bind(this);
         this.addRemark = this.addRemark.bind(this);
@@ -36,27 +36,28 @@ class RemarkList extends Component {
         this.setState({remarks: list})
     }
 
+    timeCount() {
+        let curTime = new Date().toDateString()
+        this.setState({systemTime: curTime})
+    }
+
     render() {
+        let head = {"align": "center"};
         return (
             <div>
-                <div>
+                <div style={head}>
+                    <label>备忘</label>
                     <input value={this.state.inputValue} onChange={this.inputChange}/>
                     <button onClick={this.addRemark}>添加</button>
-                    <span>{new Date().toLocaleTimeString()}</span>
+                    <span>{this.state.systemTime}</span>
                 </div>
                 <div>
                     <table className="remark-list-table">
                         <tbody>
-                        <tr>
-                            <td>
-                                <ul>
-                                    {this.state.remarks.map((item, index) => {
-                                        return <RemarkItem key={index} index={index} item={item}
-                                                           removeRemark={this.removeRemark.bind(this)}></RemarkItem>
-                                    })}
-                                </ul>
-                            </td>
-                        </tr>
+                        {this.state.remarks.map((item, index) => {
+                            return <RemarkItem key={index} index={index} item={item}
+                                               removeRemark={this.removeRemark.bind(this)}></RemarkItem>
+                        })}
                         </tbody>
 
                     </table>
