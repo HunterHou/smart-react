@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import RemarkList from './component/RemarkList';
+import Userlist from './component/UserList';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(<RemarkList/>, document.getElementById('root'));
+ReactDOM.render(<Userlist/>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
