@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Breadcrumb, Icon } from 'antd';
 import '../css/home.css'
+import Title from 'antd/lib/skeleton/Title';
 
 const { Header, Content, Footer, Sider } = Layout;
 const { SubMenu } = Menu;
@@ -16,11 +17,10 @@ class HomePage extends Component {
         this.setState({ collapsed });
     };
 
-
     render() {
         return (<Layout style={{ minHeight: '100vh' }}>
             <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
-                <div className="logo" /><div><h1 style={{ color: '#fff', alignContent: "center" }}>Smart</h1></div>
+                <div className="logo" /><div><h1 style={{ color: '#fff', textAlign: "center" }}>Smart This</h1></div>
                 <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline">
                     <Menu.Item key="1">
                         <Icon type="pie-chart" />
@@ -68,7 +68,7 @@ class HomePage extends Component {
                         <Breadcrumb.Item>User</Breadcrumb.Item>
                         <Breadcrumb.Item>Bill</Breadcrumb.Item>
                     </Breadcrumb>
-                    <div style={{ padding: 24, background: '#fff', minHeight: 360 }}>Bill is a cat.</div>
+                    <div id="appc" style={{ padding: 24, background: '#fff', minHeight: 360 }}>Bill is a cat.</div>
                 </Content>
                 <Footer style={{ textAlign: 'center' }}>Ant Design ©2018 Created by Ant UED</Footer>
             </Layout>
